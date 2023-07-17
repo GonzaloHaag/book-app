@@ -1,0 +1,50 @@
+.cardLibro{
+    background-color: rgb(230, 174, 174);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 5px;
+    position: relative;
+}
+.cardLibro:hover{
+    cursor: pointer;
+   
+        transform: scale(0.9);
+        background-color: rgba(255,255,255,0.8);
+    
+}
+.cardLibro img{
+    width: 100%;
+    border-radius: 5px;
+}
+.cardLibroInfo h4{
+    font-weight: 100;
+    font-size: 13px;
+    margin-bottom: 1.5rem;
+}
+.cardLibroInfo span{
+    font-family: 900;
+    background-color: rgba(196, 171, 171, 0.795);
+    position: absolute;
+    bottom: 15px;
+    transform: translate(-50%,50%);
+    width: 80%;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.noResultados{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.noResultados h2{
+    font-weight: 100;
+    font-size: 20px;
+    margin-right: 1.2rem;
+}
+
+

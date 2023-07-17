@@ -1,0 +1,48 @@
+.headerContainer img{
+    width: 20em;
+}
+.headerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #291f1f;
+}
+.formContainer{
+    width: 20em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+}
+.librosContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 5px;
+    row-gap: 10px;
+    padding-inline: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+@media screen and (min-width:600px) {
+    .librosContainer{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (min-width:900px) {
+    .librosContainer{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media screen and (min-width:1200px) {
+    .librosContainer{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+@media screen and (min-width:1350px) {
+    .librosContainer{
+        grid-template-columns: repeat(6,1fr);
+    }
+}
+
+
