@@ -3,12 +3,17 @@ import styles from './header.module.css';
 
 import {  Input } from '@nextui-org/react';
 import Main from '../main/Main';
+import { Loading } from "@nextui-org/react";
+
+
+
 
 const Header = () => {
 
     
     const [libros,setLibros] = useState([]);
     const [search,setSearch] = useState('');
+    const [loader,setLoader] = useState(false);
 
    /*
    Buscar como maximo 40 libros 
@@ -25,14 +30,21 @@ const Header = () => {
   }
   const handleIniciarBusqueda = (e) => {
     e.preventDefault();
+    setLoader(true);
     // console.log(search); //Imprimo el valor del input
 
     //Hago el fetch con lo que tengo guardado en el search
     fetch('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyA1GyAlzNsY6iyTljRmprl8FYyqGl4y9BA'+'&maxResults=40')
-    //Le pasamos el search como query para encontrar los que coincidan con lo escrito en el input
+   
     .then((data) => data.json())
-    .then((data) => setLibros(data.items))
-    .catch((error) => console.log(error))
+    .then((data) => {
+      setLibros(data.items);
+      setLoader(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setLoader(false);
+    });
     //El .item me da el arreglo con los libros dentro --> Clave
     //Lo guardo en mi arreglo de libros para mandarselo al main y que lo recorra y lo pinte en pantalla
 
@@ -66,9 +78,12 @@ const Header = () => {
         </form>
 
       </header>
-      <div className={styles.librosContainer} >
-      <Main libros = {libros} /> {/*Le mando el array de libros que coincidan para que el main los pinte */}
-      </div>
+      <>
+        {
+          loader ? <div className={styles.loaderContainer}><Loading color='primary' /></div> : //Si es true que muestre el loader, luego es todo logica mia arriba
+         <Main libros = {libros} /> /*Le mando el array de libros que coincidan para que el main los pinte */
+        }
+      </>
       </>
   )
 }

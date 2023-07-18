@@ -1,3 +1,13 @@
+.librosContainer{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 5px;
+    row-gap: 10px;
+    padding-inline: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+}
 .cardLibro{
     background-color: rgb(230, 174, 174);
     display: flex;
@@ -48,3 +58,23 @@
 }
 
 
+@media screen and (min-width:600px) {
+    .librosContainer{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media screen and (min-width:900px) {
+    .librosContainer{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media screen and (min-width:1200px) {
+    .librosContainer{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+@media screen and (min-width:1350px) {
+    .librosContainer{
+        grid-template-columns: repeat(6,1fr);
+    }
+}
